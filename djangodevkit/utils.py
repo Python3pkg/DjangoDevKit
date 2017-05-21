@@ -47,7 +47,7 @@ def get_settings(mod_name=None, apps=(), middlewares=(), **kw):
     settings.MIDDLEWARE_CLASSES = \
         tuple(middlewares) + tuple(getattr(settings, 'MIDDLEWARE_CLASSES', ()))
     settings.INTERNAL_IPS = ('127.0.0.1',)
-    for k, v in kw.items():
+    for k, v in list(kw.items()):
         setattr(settings, k.upper(), v)
     return settings
 

@@ -16,7 +16,7 @@ class Cascade(object):
         self.medias = medias
 
     def log(self, req, resp):
-        print('{0.method} {0.path_info} {1.status}'.format(req, resp))
+        print(('{0.method} {0.path_info} {1.status}'.format(req, resp)))
 
     def __call__(self, environ, start_response):
         req = webob.Request(environ)
